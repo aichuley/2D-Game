@@ -3,6 +3,7 @@ extends KinematicBody2D
 const MOVE_SPEED = 300
 onready var _animated_sprite = $AnimatedSprite #reference to player
 
+#movement
 func _physics_process(delta):
 	var move_vect = Vector2()
 	if Input.is_action_pressed("move_left"):
