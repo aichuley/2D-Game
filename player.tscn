@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://girlwalkinganimation.png" type="Texture" id=1]
 [ext_resource path="res://player.gd" type="Script" id=2]
 [ext_resource path="res://girlslashinganimation2.png" type="Texture" id=3]
+[ext_resource path="res://girljumpinganimation.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -79,6 +80,26 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 224, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
@@ -95,16 +116,27 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 15.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "jump",
+"speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 9, 16 )
 
 [node name="player" type="KinematicBody2D"]
+position = Vector2( 0, 6.9374 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 16 )
-animation = "slash"
+animation = "jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 17 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0.0115891, -12.9658 )
+scale = Vector2( -0.328336, 0.499482 )
