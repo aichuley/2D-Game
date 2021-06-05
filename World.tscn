@@ -1,13 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://grass.png" type="Texture" id=2]
 [ext_resource path="res://jumppadtest1.png" type="Texture" id=3]
+[ext_resource path="res://mushroom.tscn" type="PackedScene" id=4]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 11, 64, 11 )
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=2]
 0/name = "grass.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -25,19 +26,19 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 11, 64, 11 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 2 )
+0/shape = SubResource( 1 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 14, 32, 14 )
 
 [sub_resource type="TileSet" id=4]
@@ -58,14 +59,14 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 14, 32, 14 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 5 )
+0/shape = SubResource( 3 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -73,11 +74,11 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 14, 32, 14 )
 [node name="World" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79.7422, 402.395 )
+position = Vector2( 82.1235, 526.457 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 2.24496, 279.493 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524305, 0, 0, 524307, 0, 0, 524309, 0, 0, 524311, 0, 0, 524313, 0, 0, 524315, 0, 0, 524317, 0, 0, 524318, 0, 0 )
@@ -86,3 +87,6 @@ tile_data = PoolIntArray( 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0
 tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 524290, 0, 0, 524291, 0, 0 )
+
+[node name="mushroom" parent="." instance=ExtResource( 4 )]
+position = Vector2( 366.892, 530.075 )
