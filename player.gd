@@ -7,13 +7,17 @@ var anim = "default"
 var flag = false  # initialized outside process
 var isAttacking = false
 
-onready var raycast = $"/root/World/player/RayCast2D"
+signal new_game
+
+onready var raycast = $RayCast2D
+# export (PackedScene) var raycast
 var velocity = Vector2()
 const MOVE_SPEED = 300
 onready var _animated_sprite = $AnimatedSprite  #reference to player
 
 func _ready():
 	_animated_sprite.connect("animation_finished", self, "on_finished")
+	# emit_signal("new_game")
 
 #movement
 func _physics_process(delta):
@@ -50,9 +54,12 @@ func _process(delta):
 	elif Input.is_action_pressed("move_left") && isAttacking == false:
 		_animated_sprite.set_flip_h(true)
 		_animated_sprite.play("walk")
+		raycast.cast_to = Vector2(0, -50)
 	elif Input.is_action_pressed("slash") && Input.is_action_pressed("move_left"):
 		_animated_sprite.play("slash")
+		raycast.cast_to = Vector2(0, 50)
 		# isAttacking = true
+		_animated_sprite.play("jump")
 	elif Input.is_action_pressed("slash") && Input.is_action_pressed("move_right"):
 		_animated_sprite.play("walk")
 		# isAttacking = true
@@ -62,7 +69,6 @@ func _process(delta):
 
 	if Input.is_action_pressed("slash"):
 		isAttacking = true
-		# _animated_sprite.connect("finished", self, "on_finished")
 
 func on_finished():
 	if _animated_sprite.animation == "slash":
