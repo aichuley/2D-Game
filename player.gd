@@ -50,14 +50,14 @@ func _physics_process(delta):
 func _process(delta):
 	if Input.is_action_pressed("move_right") && isAttacking == false:
 		_animated_sprite.set_flip_h(false)
+		raycast.cast_to = Vector2(-50, 0)
 		_animated_sprite.play("walk")
 	elif Input.is_action_pressed("move_left") && isAttacking == false:
 		_animated_sprite.set_flip_h(true)
 		_animated_sprite.play("walk")
-		raycast.cast_to = Vector2(0, -50)
+		raycast.cast_to = Vector2(50, 0)
 	elif Input.is_action_pressed("slash") && Input.is_action_pressed("move_left"):
 		_animated_sprite.play("slash")
-		raycast.cast_to = Vector2(0, 50)
 		# isAttacking = true
 		_animated_sprite.play("jump")
 	elif Input.is_action_pressed("slash") && Input.is_action_pressed("move_right"):
