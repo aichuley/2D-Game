@@ -6,6 +6,7 @@ var count = 0
 var anim = "default"
 var flag = false  # initialized outside process
 var isAttacking = false
+var health = 100
 
 signal new_game
 
@@ -87,3 +88,13 @@ func check_collision():
 func _input(event):
 	if event.is_action_pressed("slash"):
 		check_collision()
+
+func die():
+	_animated_sprite.play("death")
+	yield(_animated_sprite, "animation_finished")
+	queue_free()
+	
+func mushroom_hit():
+	health -= 25
+	if health <= 0:
+		die()
