@@ -32,98 +32,98 @@ region = Rect2( 126, 0, 42, 34 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 34, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 68, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 102, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 34, 34 )
+region = Rect2( 136, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 34, 0, 34, 34 )
+region = Rect2( 170, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 68, 0, 34, 34 )
+region = Rect2( 204, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 102, 0, 34, 34 )
+region = Rect2( 238, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 136, 0, 34, 34 )
+region = Rect2( 272, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 170, 0, 34, 34 )
+region = Rect2( 306, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 204, 0, 34, 34 )
+region = Rect2( 340, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 238, 0, 34, 34 )
+region = Rect2( 374, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 272, 0, 34, 34 )
+region = Rect2( 408, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 306, 0, 34, 34 )
+region = Rect2( 442, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 340, 0, 34, 34 )
+region = Rect2( 476, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 374, 0, 34, 34 )
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 408, 0, 34, 34 )
+atlas = ExtResource( 1 )
+region = Rect2( 34, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 442, 0, 34, 34 )
+atlas = ExtResource( 1 )
+region = Rect2( 68, 0, 34, 34 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 476, 0, 34, 34 )
+atlas = ExtResource( 1 )
+region = Rect2( 102, 0, 34, 34 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
@@ -139,12 +139,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
-"name": "die",
+"name": "attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "attack",
+"name": "die",
 "speed": 5.0
 } ]
 
@@ -178,7 +178,6 @@ shape = SubResource( 27 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

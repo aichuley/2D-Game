@@ -49,7 +49,9 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	if Input.is_action_pressed("move_right") && isAttacking == false:
+	if health <= 0:
+		die()
+	elif Input.is_action_pressed("move_right") && isAttacking == false:
 		_animated_sprite.set_flip_h(false)
 		raycast.cast_to = Vector2(-50, 0)
 		_animated_sprite.play("walk")
@@ -96,5 +98,7 @@ func die():
 	
 func mushroom_hit():
 	health -= 25
-	if health <= 0:
-		die()
+	print("PlayerHit" )
+	print(health)
+
+
